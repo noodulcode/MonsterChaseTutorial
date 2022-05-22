@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6356447138628851789}
   - component: {fileID: 6590198438268142596}
   - component: {fileID: 6702184872842923388}
+  - component: {fileID: 3988713514252820280}
   m_Layer: 0
   m_Name: Red Zombie
   m_TagString: Untagged
@@ -153,4 +154,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &3988713514252820280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709927414497487294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be3a0476f51ae9439c9f690e18ec594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
