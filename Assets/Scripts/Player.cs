@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private string WALK_ANIMATION = "Walk";
     private bool isGrounded;
     private string GROUND_TAG = "Ground";
+    private string ENEMY_TAG = "Enemy";
 
     private void Awake() 
     {
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
     // called every fixed framerate
     private void FixedUpdate() 
     {
-        //PlayerJump();
+        //PlayerJump();  doesn't work here
     }
     
     void PlayerMoveKeyboard()
@@ -85,10 +86,18 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.gameObject.CompareTag(GROUND_TAG))
-        {
+        if (collision.gameObject.CompareTag(GROUND_TAG)) // if an if statement has one single line of code you can omit curly brackets
             isGrounded = true;
-        }
+
+        if (collision.gameObject.CompareTag(ENEMY_TAG))
+            Destroy(gameObject);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) // isTrigger must be checked in box collider
+    {
+        if (collision.CompareTag(ENEMY_TAG)) // collider2d tag can access compare tag right away, but not collision2d
+            Destroy(gameObject);
     }
 
 
